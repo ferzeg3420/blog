@@ -1,7 +1,8 @@
 ---
-title: Amazing first post
+title: This is a test
 ---
 
-## Level two header
+## What this is
 
-Paragraph
+I'm trying blogging out. This is only the beginning but there are
+posts in the works.

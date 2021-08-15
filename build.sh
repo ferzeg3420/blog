@@ -1,11 +1,13 @@
 #!/bin/sh
 
 recreate_index() {
-    printf "%s\ntitle: All Posts So Far\n---\n\n" "---" \
-        > ./source/index.md
+    date="$(date "+%Y-%m-%d")"
+    printf "%s\ntitle: All Posts So Far\n---\n\n---\ndate: ${date}\n---\n\n" \
+        "---" > ./source/index.md
     for i in ./source/*.md
     do
-        if test "${i}" = "./source/index.md"
+        if test "${i}" = "./source/index.md" || \
+           test "${i}" = "./source/template.md"
         then
             continue
         fi
@@ -16,7 +18,7 @@ recreate_index() {
                   | sed "s/[[:space:]]*$//")"  
 
         filename="$(basename "$i" .md)"
-        link="/blog/${filename}"
+        link="./${filename}.html"
         echo "1. [${title}](${link})" >> ./source/index.md
     done
 }
@@ -24,8 +26,13 @@ recreate_index() {
 build_from_sources() {
     for i in ./source/*.md
     do
+        if test "${i}" = "./source/template.md"
+        then
+            continue
+        fi
         filename="$(basename "$i" .md)"
-        pandoc -s "$i" -o "blog/${filename}.html" --template ./public/blogTemplate.html
+        pandoc -s "$i" -o "blog/${filename}.html" --template \
+            ./public/blogTemplate.html
     done
 }
 

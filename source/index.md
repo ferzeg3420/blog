@@ -2,5 +2,8 @@
 title: All Posts So Far
 ---
 
-1. [Amazing first post](/blog/post1)
-1. [Test title](/blog/template)
+---
+date: 2021-08-15
+---
+
+1. [This is a test](./post1.html)
