@@ -1,16 +1,52 @@
 <!doctype html>
-<html>
-    <head>
-        <title>${title}</title>
-        <!-- <link rel="stylesheet" href="../public/blog.css"> -->
-        <style>
-            ${ blog.css() }
-        </style>
-    </head>
-    <body>
-        <main>
-            <h1>${title}</h1>
-            ${body}
-        </main>
-    </body>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Test</title>
+  <meta name="test" content="Testing shiet">
+  <link href="../public/blogStyle.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="navbar-left">
+            <a href="https://ferzeg.com" class="navbar-item">
+                Home
+            </a>
+            <a href="https://ferzeg.com/blog/index.html" class="navbar-item">
+                All Posts
+            </a>
+        </div>
+        <div id="navbar-right">
+            <!-- Rounded switch -->
+            <label  class="switch">
+                <input id="dark-mode-toggle" 
+                       type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            <a href="#" class="navbar-item">
+                &#x263e;&#9728;
+            </a>
+        </div>
+    </nav>
+    <main>
+        <div class="tldr-edge"></div>
+        <div class="tldr-edge"></div>
+        <div class="tldr-edge"></div>
+        <div class="tldr-edge"></div>
+        <div id="tldr-sign">TL;DR:</div>
+        ${body}
+    </main>
+    
+    <footer>
+        <p class="email-me">
+             email me at: fzegadar@ucsc.edu
+        </p>
+    </footer>
+    
+    <script src="../public/blogScript.js"></script>
+</body>
+
+
 </html>
